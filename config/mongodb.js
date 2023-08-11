@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const { MONGO_SERVER, MONGO_DATABASE } = process.env;
 
 mongoose
@@ -10,5 +9,3 @@ mongoose
   .catch((err) => {
     console.error("Database connection failed");
   });
-
-  
