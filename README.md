@@ -3,6 +3,6 @@
 - language = Node Js
 
 - Topic 
-    * give proper name in folder structre.
-    * create cnotroller folder and create proper folder structer.
+    * crude oparation.
+    * post method use and put method use mongodb and mysql
   
