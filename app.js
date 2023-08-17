@@ -3,9 +3,11 @@ const app = express();
 const routes = require('./routes/userRouter');
 const dotenv = require('dotenv');
 dotenv.config();
+const db = require('./config/mongodb')
 
 app.use(express.json());
-app.use('/', routes);
+app.use(routes);
+db;
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
