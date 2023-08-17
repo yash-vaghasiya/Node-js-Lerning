@@ -6,6 +6,6 @@ const userSchema = new mongoose.Schema({
   age: Number,
   mobileNo: Number,
 });
-const User = mongoose.model("entite", userSchema);
+const User = mongoose.model("entites", userSchema);
 
 module.exports = User;
