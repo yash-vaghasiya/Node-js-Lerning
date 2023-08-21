@@ -4,5 +4,5 @@
 
 - Topic 
     * crude oparation.
-    * post method use and put method use mongodb folder structure set schema and controller change.  
+    * entre password in data end save in mongodb database in bcrypt and set folder structer  
   
