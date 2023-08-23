@@ -1,8 +1,15 @@
 const bcrypt = require('bcrypt');
 const bcryptRounds = parseInt(process.env.BCRYPT_ROUNDS) ;
 
-const password = async function(password){
+const hashPassword = async function(password){
     const hashedpassword = await bcrypt.hash(password, bcryptRounds)
     return hashedpassword;
 }
-module.exports = password
+const comparepassword = async function(password, hashedpassword){
+    const match = await bcrypt.compare(password, hashedpassword)
+    return match;
+}
+module.exports = {
+    hashPassword, 
+    comparepassword,
+}

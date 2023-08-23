@@ -1,5 +1,5 @@
 const User = require("../models/usermodal");
-const hashPassword  = require("../models/userPassword");
+const {hashPassword}  = require("../models/userPassword");
 
 // get all data
 const getMongodbUser = async (request, response) => {
