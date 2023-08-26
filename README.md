@@ -4,5 +4,5 @@
 
 - Topic 
     * crude oparation.
-    * http status code   
+    * user register, user registection token generet, user password and conform password match.
   

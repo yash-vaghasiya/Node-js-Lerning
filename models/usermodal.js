@@ -1,4 +1,5 @@
 const User = require('./userschema');
+const jwt = require("jsonwebtoken");
 
 
 // get all user
@@ -8,8 +9,8 @@ const getAllData = function(){
 }
 
 // create new user
-const postAllData = async function(name, email, age, password){
-    const  postss = new User({name, email, age, password});
+const postAllData = async function(name, email, password, tc){
+    const  postss = new User({name, email, password, tc});
     return postss.save();
     // console.log();
 }
@@ -37,6 +38,16 @@ const deleteUserbyId = async function (userId) {
     const user =  User.findOne({ email });
     return user;
   }
+
+  const getEmailbyId = async function(email){
+    const user = User.findOne({email:email});
+    return  user;
+  }
+
+  const tokengeneret = function(User){
+    const token  =  jwt.sign({userId:User._id}, process.env.JWT_SECRET_KEY, {expiresIn: process.env.JWT_EXPIRE});
+    return token;
+  } 
 module.exports ={
     getAllData,
     postAllData,
@@ -44,4 +55,6 @@ module.exports ={
     updateUserId,
     deleteUserbyId,
     loginUser,
+    getEmailbyId,
+    tokengeneret,
 }
