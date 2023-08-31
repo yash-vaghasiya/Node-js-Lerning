@@ -4,5 +4,5 @@
 
 - Topic 
     * crude oparation.
-    * user register, user registection token generet, user password and conform password match.
+    * login user genret token and authentication json web token find user.
   
