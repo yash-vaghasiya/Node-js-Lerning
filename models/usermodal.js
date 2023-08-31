@@ -18,7 +18,7 @@ const postAllData = async function(name, email, password, tc){
 // get user by id
 const getUserById = async function(userId) {
     console.log(userId);
-    const user =  User.findById(userId);
+    const user =  User.findById(userId).select('-password');
     return user;
 }
 
@@ -48,6 +48,7 @@ const deleteUserbyId = async function (userId) {
     const token  =  jwt.sign({userId:User._id}, process.env.JWT_SECRET_KEY, {expiresIn: process.env.JWT_EXPIRE});
     return token;
   } 
+
 module.exports ={
     getAllData,
     postAllData,
